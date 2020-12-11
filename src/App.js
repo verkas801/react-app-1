@@ -1,25 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import Content from './components/Content';
+import Navbar from './components/Navbar';
 
 function App() {
+  const data = {
+    carts : [
+      {id:1,name:"Yuhuu"},
+      {id:2,name:"Yahaa"},
+      {id:3,name:"Yehee"}
+    ]
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit ME HERE<code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <React.Fragment>
+      <Navbar />
+      <Content 
+        carts={data.carts} 
+      />
+      </React.Fragment>
   );
+}
+
+function alert()
+{
+  alert("ble");
 }
 
 export default App;
