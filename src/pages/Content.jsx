@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import logo from './../logo.svg';
-import Card from './Card';
+import Card from './../components/Card';
 
 const Content = (props) => {
 
     return ( 
-        <div className="App">
+        <div className="App container">
         <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
             <p>

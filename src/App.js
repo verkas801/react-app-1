@@ -1,7 +1,8 @@
 import './App.css';
 import React from 'react';
-import Content from './components/Content';
+import Content from './pages/Content';
 import Navbar from './components/Navbar';
+import { BrowserRouter, Route, useLocation } from 'react-router-dom';
 
 function App() {
   const data = {
@@ -11,20 +12,22 @@ function App() {
       {id:3,name:"Yehee"}
     ]
   };
-
+  console.log(window.location.pathname);
   return (
-      <React.Fragment>
+      <BrowserRouter>
       <Navbar />
-      <Content 
-        carts={data.carts} 
+      <Route 
+        exact path='/'
+        component ={withProps(Content,{carts:data.carts})}
       />
-      </React.Fragment>
+      </BrowserRouter>
   );
 }
 
-function alert()
-{
-  alert("ble");
+function withProps(Component, props) {
+  return function(matchProps) {
+    return <Component {...props} {...matchProps} />
+  }
 }
 
 export default App;
