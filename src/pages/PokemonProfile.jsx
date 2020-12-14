@@ -1,5 +1,5 @@
 // -- Dependencies & Libraries
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { GET_POKEMON_DETAIL } from '../graphql/pokemonList';
 import { useParams, useLocation } from 'react-router-dom';
@@ -8,17 +8,11 @@ import { FaAngleLeft, FaRegHandPaper, FaRegFutbol } from 'react-icons/fa';
 import { useHistory } from 'react-router-dom';
 // --
 
-// -- Components
-import ModalComponent from './../components/Modal';
-// --
-
 const PokemonProfile = (props) => {
-    const [showAlert, setShowAlert] = useState(false);
     const { addContext,removeContext,mypokemons } = useContext(GlobalContext);
     const { prop } = useLocation();
     const history = useHistory();
     const { name } = useParams();
-    let message, classBootBox;
 
     const { data:{pokemon = []} = {}, loading, error } = useQuery(GET_POKEMON_DETAIL,{
         variables: {name:name}
@@ -33,10 +27,6 @@ const PokemonProfile = (props) => {
     let newMoves = [];
     for(let i=0;i<5;i++){
         newMoves.push(moves[i]);
-    }
-
-    const handleClose = () => {
-        return setShowAlert(false);
     }
 
     const chance = () => {

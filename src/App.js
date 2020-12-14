@@ -36,7 +36,7 @@ function App() {
     <GlobalContextProvider>
       <ApolloProvider client={client}>
         <BrowserRouter basename={BASE_PATH}>
-          <NavbarComponent />
+          <NavbarComponent basename={BASE_PATH} />
           <div className="App">
             <div className="container-fluid" style ={ { backgroundImage: "url("+background+")" } }>
               <header>
