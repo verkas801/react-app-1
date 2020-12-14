@@ -36,3 +36,77 @@
     transform: rotate(360deg);
   }
 }
+
+.mycard {
+  background-color: #282c34;
+  border: 2px solid rgb(255, 115, 0);
+  border-radius: 5px;
+}
+
+.title{
+  word-wrap: break-word;
+  color:rgb(255, 115, 0);
+  font-size:3.5vw;
+  font-weight:bold;
+}
+
+.title-profile{
+  word-wrap: break-word;
+  color:rgb(255, 115, 0);
+  font-size:5vw;
+  font-weight:bold;
+}
+
+.desc{
+  word-wrap: break-word;
+  color:rgb(255, 181, 44);
+  font-size:3vw;
+}
+
+.owned{
+  color:rgb(250, 207, 126);
+}
+
+.not-owned{
+  color:rgb(80, 79, 79);
+}
+
+.btn-custom{
+  color:rgb(255, 115, 0);
+  
+}
+
+.img-resp{
+  width: 100%;
+  max-width: 200px;
+  height: 200px;
+}
+
+.img-profile{
+  width: 100%;
+  min-width: 120px;
+  min-height: 120px;
+  height: auto;
+  border: 2px solid rgb(255, 115, 0);
+  border-radius: 5px;
+}
+
+
+.container-fluid{
+  min-height:600px;
+  top:0;
+  background-image: "url('/bg-2.jpg')";
+  background-repeat:no-repeat;
+  background-size:auto;
+  background-position:center;
+  padding-bottom:25%;
+}
+
+@media screen and (min-width: 1200px) {
+  .title {
+     font-size: 30px;
+  }
+  .title-profile{
+     font-size: 50px;
+  }
+}

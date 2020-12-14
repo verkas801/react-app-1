@@ -1,32 +1,24 @@
-import React, { Component } from 'react';
+// -- Dependencies/Libraries
+import React from 'react';
+import { Navbar,Nav } from 'react-bootstrap';
+import logo from '../images/pokeball.svg';
+import logoPokemon from '../images/pikachu.svg';
+import logoStore from '../images/pokecenter.png';
+// --
 
-const Navbar = () => {
+const NavbarComponent = () => {
     return ( 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/">Navbar</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>
-                </div>
-            </div>
-        </nav>
+        <Navbar collapseOnSelect sticky="top" expand="true" bg="dark" variant="dark">
+            <Navbar.Brand className="m-2" href="/"><img width="60px" height="50px" src={logo} alt="logo"></img>PokeStore</Navbar.Brand>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+                <Nav className="mr-auto">
+                    <Nav.Link className="m-2" href="/pokemon/list"><img width="35px" height="35px" src={logoStore} alt="logoPokemon"></img> Store</Nav.Link>
+                    <Nav.Link className="m-2" href="/mypokemon/list"><img width="35px" height="35px" src={logoPokemon} alt="logoPokemon"></img> My Pokemon</Nav.Link>
+                </Nav>
+            </Navbar.Collapse>
+        </Navbar>
      );
 }
  
-export default Navbar;
+export default NavbarComponent;

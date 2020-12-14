@@ -1,44 +1,30 @@
-import React, { Component } from 'react';
-import logo from './../logo.svg';
+// -- Dependencies & Libraries
+import React from 'react';
+import {Link} from 'react-router-dom';
+import { FaSearchPlus, FaRegHandPaper } from 'react-icons/fa';
+// --
 
-class Card extends Component {
-    state = {
-        inputName : ''
-    };
+const Card = (props) => {
+    const {data, release} = props;
+    const {name,image,count,nickName} = data;
 
-    constructor(props){
-        super(props);
-        this.state.name = props.name;
-        this.state.desc = '-';
-        this.state.quantity = 0;
-    }
-
-    render() { 
-        return (
-            <div className="col-md-3 m-2">
-                <img src={logo} onClick={this.alerts} alt="logo" />
-                <button className="btn btn-warning" onClick={this.change}>Change</button>
-                <input type="text" onChange={this.onchange} placeholder="Change Name Here..."/>
-                <input type="text" ref={input=>this._desc = input} placeholder="Change Desc Here..."/>
-                <input type="number" ref={input=>this._qty = input} min="0" step="1" placeholder="Change Quantity Here..."/>
-                <p>{this.state.name}</p>
-                <p>{this.state.desc}</p>
-                <p>{this.state.quantity}</p>
+    return (
+        <div className="col-4 col-md-3 col-lg-2">
+            <div className="mycard col-12 mt-2">
+                <img className="img-fluid img-resp" src={image} alt={nickName?nickName:name} />
+                <div className="row">
+                    <span className="title float-center">{name}</span>
+                </div>  
+                {nickName? <div className="row"><span className="desc float-center">{nickName}</span></div>:""}
+                {count!==undefined? 
+                    count > 0 ? <div className="row"><span className="badge owned">{"owned : "+count}</span></div>:
+                    <div className="row"><span className="badge not-owned">not owned</span></div>:""
+                }
+                <Link className="btn btn-warning btn-sm mb-3 mt-3" to={{ pathname:'/pokemon/list/detail/'+name, prop:data}}><FaSearchPlus/> Detail</Link>&nbsp;
+                {nickName?<button className="btn btn-danger btn-sm" onClick={()=>{release(data)}}><FaRegHandPaper/> Release</button>:""}
             </div>
-        );
-    };
-
-    alerts = () => {
-        alert(this.state.name);
-    }
-
-    onchange = (e) => {
-        this.setState({input:e.target.value});
-    }
-    
-    change = () => {
-        this.setState({name:this.state.input,desc:this._desc.value,quantity:this._qty.value});
-    }
+        </div>
+    );
 }
  
 export default Card;

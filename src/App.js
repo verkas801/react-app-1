@@ -1,26 +1,70 @@
-import './App.css';
+// -- Dependencies/Libraries
 import React from 'react';
-import Content from './pages/Content';
-import Navbar from './components/Navbar';
-import { BrowserRouter, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from '@apollo/react-hooks';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+import GlobalContextProvider from './contexts/GlobalContext';
+// --
+
+// -- Pages
+import Home from './pages/Home';
+import PokemonList from './pages/PokemonList';
+import MyPokemon from './pages/MyPokemon';
+import PokemonProfile from './pages/PokemonProfile';
+
+// --
+
+// -- Components
+import NavbarComponent from './components/Navbar';
+// --
+
+// -- Addons/External
+import './App.css';
+import background from './bg-3.jpg';
+// --
 
 function App() {
-  const data = {
-    carts : [
-      {id:1,name:"Yuhuu"},
-      {id:2,name:"Yahaa"},
-      {id:3,name:"Yehee"}
-    ]
-  };
-  console.log(window.location.pathname);
+  const cache = new InMemoryCache();
+  const client = new ApolloClient({
+    uri : 'https://graphql-pokeapi.vercel.app/api/graphql',
+    cache
+  });
+
   return (
-      <BrowserRouter>
-      <Navbar />
-      <Route 
-        exact path='/'
-        component ={withProps(Content,{carts:data.carts})}
-      />
-      </BrowserRouter>
+    <GlobalContextProvider>
+      <ApolloProvider client={client}>
+        <BrowserRouter>
+          <NavbarComponent />
+          <div className="App">
+            <div className="container-fluid" style ={ { backgroundImage: "url("+background+")" } }>
+              <header>
+                <Switch>
+                  <Route 
+                    exact path='/'
+                    // component ={withProps(Content,{carts:data.carts})}
+                    component = {Home}
+                  />
+                  <Route 
+                    exact path='/pokemon/list'
+                    component = {PokemonList}
+                  />
+                  <Route 
+                    exact path='/mypokemon/list'
+                    component = {MyPokemon}
+                  />
+                  <Route 
+                    exact path='/pokemon/list/detail/:name'
+                    component = {PokemonProfile}
+                  />
+                  <Redirect to='/' />
+                </Switch>
+              </header>
+            </div>
+          </div>  
+        </BrowserRouter>
+      </ApolloProvider>
+    </GlobalContextProvider>
   );
 }
 
