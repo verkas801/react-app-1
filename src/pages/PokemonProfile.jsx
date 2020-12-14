@@ -8,6 +8,8 @@ import { FaAngleLeft, FaRegHandPaper, FaRegFutbol } from 'react-icons/fa';
 import { useHistory } from 'react-router-dom';
 // --
 
+import { BASE_PATH } from '../constants/constant';
+
 const PokemonProfile = (props) => {
     const { addContext,removeContext,mypokemons } = useContext(GlobalContext);
     const { prop } = useLocation();
@@ -54,7 +56,7 @@ const PokemonProfile = (props) => {
             while(check);
             addContext({id,name,image,nickName},'mypokemons');
             alert("Your new "+name+" nickname is "+nickName);
-            window.location.href = '/react-app-1/mypokemon/list';   
+            window.location.href = BASE_PATH+'/mypokemon/list';   
         }
     }
 
@@ -63,7 +65,7 @@ const PokemonProfile = (props) => {
         if(window.confirm("Are you sure want to release "+nickName+"?")){
             removeContext(nickName,'nickName','mypokemons');
             alert(nickName+" has been released");
-            window.location.href = '/react-app-1/mypokemon/list';
+            window.location.href = BASE_PATH+'/mypokemon/list';
         }
     }
 

@@ -35,30 +35,30 @@ function App() {
   return (
     <GlobalContextProvider>
       <ApolloProvider client={client}>
-        <BrowserRouter basename={BASE_PATH}>
-          <NavbarComponent basename={BASE_PATH} />
+        <BrowserRouter>
+          <NavbarComponent base={BASE_PATH} />
           <div className="App">
             <div className="container-fluid" style ={ { backgroundImage: "url("+background+")" } }>
               <header>
                 <Switch>
                   <Route 
-                    exact path='/'
+                    exact path={BASE_PATH+'/'}
                     // component ={withProps(Content,{carts:data.carts})}
                     component = {Home}
                   />
                   <Route 
-                    exact path='/pokemon/list'
+                    exact path={BASE_PATH+'/pokemon/list'}
                     component = {PokemonList}
                   />
                   <Route 
-                    exact path='/mypokemon/list'
+                    exact path={BASE_PATH+'/mypokemon/list'}
                     component = {MyPokemon}
                   />
                   <Route 
-                    exact path='/pokemon/list/detail/:name'
+                    exact path={BASE_PATH+'/pokemon/list/detail/:name'}
                     component = {PokemonProfile}
                   />
-                  <Redirect to='/' />
+                  <Redirect to= {BASE_PATH+'/'} />
                 </Switch>
               </header>
             </div>

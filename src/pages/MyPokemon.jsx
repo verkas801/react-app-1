@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 import { FaRegFutbol } from 'react-icons/fa';
 // --
 
+import { BASE_PATH } from '../constants/constant';
+
 const MyPokemon = (props) => {
     const { mypokemons, removeContext } = useContext(GlobalContext);
     const release = (pokemon) => {
@@ -26,7 +28,7 @@ const MyPokemon = (props) => {
                                 <p className="title-profile">You don't have any pokemons, let's catch them</p>
                             </div>
                             <div className="row justify-content-center col-4 col-md-3 col-lg-2">
-                                <Link className="btn btn-primary btn-sm" to="/pokemon/list"><FaRegFutbol/> Catch</Link>
+                                <Link className="btn btn-primary btn-sm" to={BASE_PATH+"/pokemon/list"}><FaRegFutbol/> Catch</Link>
                             </div>
                         </div>
                     }
