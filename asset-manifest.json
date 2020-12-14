@@ -1,23 +1,29 @@
 {
   "files": {
-    "main.css": "/react-app-1/static/css/main.ab7136cd.chunk.css",
-    "main.js": "/react-app-1/static/js/main.0d079818.chunk.js",
-    "main.js.map": "/react-app-1/static/js/main.0d079818.chunk.js.map",
-    "runtime-main.js": "/react-app-1/static/js/runtime-main.310b0c1d.js",
-    "runtime-main.js.map": "/react-app-1/static/js/runtime-main.310b0c1d.js.map",
-    "static/js/2.6bec52f7.chunk.js": "/react-app-1/static/js/2.6bec52f7.chunk.js",
-    "static/js/2.6bec52f7.chunk.js.map": "/react-app-1/static/js/2.6bec52f7.chunk.js.map",
-    "static/js/3.fcbbfcb2.chunk.js": "/react-app-1/static/js/3.fcbbfcb2.chunk.js",
-    "static/js/3.fcbbfcb2.chunk.js.map": "/react-app-1/static/js/3.fcbbfcb2.chunk.js.map",
+    "main.css": "/react-app-1/static/css/main.cf411f0d.chunk.css",
+    "main.js": "/react-app-1/static/js/main.d77a95b2.chunk.js",
+    "main.js.map": "/react-app-1/static/js/main.d77a95b2.chunk.js.map",
+    "runtime-main.js": "/react-app-1/static/js/runtime-main.444b1f5a.js",
+    "runtime-main.js.map": "/react-app-1/static/js/runtime-main.444b1f5a.js.map",
+    "static/css/2.81057f45.chunk.css": "/react-app-1/static/css/2.81057f45.chunk.css",
+    "static/js/2.34f35b61.chunk.js": "/react-app-1/static/js/2.34f35b61.chunk.js",
+    "static/js/2.34f35b61.chunk.js.map": "/react-app-1/static/js/2.34f35b61.chunk.js.map",
+    "static/js/3.b7c9d237.chunk.js": "/react-app-1/static/js/3.b7c9d237.chunk.js",
+    "static/js/3.b7c9d237.chunk.js.map": "/react-app-1/static/js/3.b7c9d237.chunk.js.map",
     "index.html": "/react-app-1/index.html",
-    "static/css/main.ab7136cd.chunk.css.map": "/react-app-1/static/css/main.ab7136cd.chunk.css.map",
-    "static/js/2.6bec52f7.chunk.js.LICENSE.txt": "/react-app-1/static/js/2.6bec52f7.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/react-app-1/static/media/logo.6ce24c58.svg"
+    "static/css/2.81057f45.chunk.css.map": "/react-app-1/static/css/2.81057f45.chunk.css.map",
+    "static/css/main.cf411f0d.chunk.css.map": "/react-app-1/static/css/main.cf411f0d.chunk.css.map",
+    "static/js/2.34f35b61.chunk.js.LICENSE.txt": "/react-app-1/static/js/2.34f35b61.chunk.js.LICENSE.txt",
+    "static/media/bg-3.c2f762d8.jpg": "/react-app-1/static/media/bg-3.c2f762d8.jpg",
+    "static/media/pikachu.f8578816.svg": "/react-app-1/static/media/pikachu.f8578816.svg",
+    "static/media/pokeball.8e8e9d3a.svg": "/react-app-1/static/media/pokeball.8e8e9d3a.svg",
+    "static/media/pokecenter.3de2bd7a.png": "/react-app-1/static/media/pokecenter.3de2bd7a.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.310b0c1d.js",
-    "static/js/2.6bec52f7.chunk.js",
-    "static/css/main.ab7136cd.chunk.css",
-    "static/js/main.0d079818.chunk.js"
+    "static/js/runtime-main.444b1f5a.js",
+    "static/css/2.81057f45.chunk.css",
+    "static/js/2.34f35b61.chunk.js",
+    "static/css/main.cf411f0d.chunk.css",
+    "static/js/main.d77a95b2.chunk.js"
   ]
 }
