@@ -8,8 +8,8 @@ const Home = () => {
             <div className="row justify-content-center pt-4">
                 <div className="col-10 col-md-8 col-lg-8">
                     <div className="mycard col-12 mt-2">
-                        <div className="row">
-                            <img src={logoStore} className="img-resp" alt="logoStore"/>
+                        <div className="col-12 align-self-center">
+                            <img src={logoStore} className="img-home" alt="logoStore"/>
                         </div>
                         <div className="row">
                             <p className="title-profile">Welcome to PokeStore</p>

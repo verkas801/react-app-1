@@ -79,7 +79,16 @@
 .img-resp{
   width: 100%;
   max-width: 200px;
-  height: 200px;
+  height: 100%;
+}
+
+.img-home{
+  min-width:100px;
+  min-height:100px;
+  height: 100%;
+  width: 100%;
+  max-width:250px;
+  max-height:250px;
 }
 
 .img-profile{

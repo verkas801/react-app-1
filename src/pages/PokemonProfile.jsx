@@ -24,7 +24,7 @@ const PokemonProfile = (props) => {
         variables: {name:name}
     });
     
-    if (loading) return <p>Loading</p>;
+    if (loading) return <div><p>&nbsp;</p><p>&nbsp;</p></div>;
     if (error) return <p>{error}</p>;
 
     const {id,image,nickName} = prop;
