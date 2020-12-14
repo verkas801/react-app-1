@@ -22,6 +22,7 @@ import NavbarComponent from './components/Navbar';
 // -- Addons/External
 import './App.css';
 import background from './bg-3.jpg';
+import { BASE_PATH } from './constants/constant';
 // --
 
 function App() {
@@ -34,7 +35,7 @@ function App() {
   return (
     <GlobalContextProvider>
       <ApolloProvider client={client}>
-        <BrowserRouter>
+        <BrowserRouter basename={BASE_PATH}>
           <NavbarComponent />
           <div className="App">
             <div className="container-fluid" style ={ { backgroundImage: "url("+background+")" } }>

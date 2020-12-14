@@ -1,5 +1,5 @@
 // -- Dependencies & Libraries
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { GET_POKEMON_DETAIL } from '../graphql/pokemonList';
 import { useParams, useLocation } from 'react-router-dom';
@@ -13,10 +13,12 @@ import ModalComponent from './../components/Modal';
 // --
 
 const PokemonProfile = (props) => {
+    const [showAlert, setShowAlert] = useState(false);
     const { addContext,removeContext,mypokemons } = useContext(GlobalContext);
     const { prop } = useLocation();
     const history = useHistory();
     const { name } = useParams();
+    let message, classBootBox;
 
     const { data:{pokemon = []} = {}, loading, error } = useQuery(GET_POKEMON_DETAIL,{
         variables: {name:name}
@@ -28,6 +30,15 @@ const PokemonProfile = (props) => {
     const {id,image,nickName} = prop;
     const {moves,types} = pokemon;
 
+    let newMoves = [];
+    for(let i=0;i<5;i++){
+        newMoves.push(moves[i]);
+    }
+
+    const handleClose = () => {
+        return setShowAlert(false);
+    }
+
     const chance = () => {
         const rand = Math.random();
         if(rand<0.5) return false;
@@ -37,12 +48,18 @@ const PokemonProfile = (props) => {
     const catchPokemon = () => {
         if(!chance()) alert("Catch Pokemon Failed, Lets try again. . .");
         else{
-            let check = true;
-            let nickName;
+            let check,nickName;
             do{
                 nickName = prompt("Congrats! You catch a "+name+", Give your new pokemon's nickname");
-                check = mypokemons.filter(pokemon=>pokemon.nickName === nickName ).length;
-                if(check) alert("Pokemon's nickname must be unique");
+                if(nickName)
+                {
+                    check = mypokemons.filter(pokemon=>pokemon.nickName === nickName ).length;
+                    if(check) alert("Pokemon's nickname must be unique");
+                }
+                else{
+                    alert("Please give a nickname");
+                    check = true;
+                }
             }
             while(check);
             addContext({id,name,image,nickName},'mypokemons');
@@ -58,10 +75,6 @@ const PokemonProfile = (props) => {
             alert(nickName+" has been released");
             window.location.href = '/mypokemon/list';
         }
-    }
-
-    const openModal = () => {
-        this.setState({show:true});
     }
 
     return ( 
@@ -101,7 +114,7 @@ const PokemonProfile = (props) => {
                                     <span className="title float-center">Moves :</span>
                                 </div>
                                 <div className="row">
-                                    {moves.map(data => <span className="badge" key={data.move.name}>{data.move.name}</span> )}
+                                    {newMoves.map(data => <span className="badge" key={data.move.name}>{data.move.name}</span> )}
                                 </div>
                             </div>
                         </div>
