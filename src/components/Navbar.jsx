@@ -9,7 +9,7 @@ import logoStore from '../images/pokecenter.png';
 const NavbarComponent = () => {
     return ( 
         <Navbar collapseOnSelect sticky="top" expand="true" bg="dark" variant="dark">
-            <Navbar.Brand className="m-2" href="react-app-1/"><img width="60px" height="50px" src={logo} alt="logo"></img>PokeStore</Navbar.Brand>
+            <Navbar.Brand className="m-2" href="/react-app-1"><img width="60px" height="50px" src={logo} alt="logo"></img>PokeStore</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
