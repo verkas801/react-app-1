@@ -4,8 +4,6 @@ import {Link} from 'react-router-dom';
 import { FaSearchPlus, FaRegHandPaper } from 'react-icons/fa';
 // --
 
-import { BASE_PATH } from '../constants/constant';
-
 const Card = (props) => {
     const {data, release} = props;
     const {name,image,count,nickName} = data;
@@ -22,7 +20,7 @@ const Card = (props) => {
                     count > 0 ? <div className="row"><span className="badge owned">{"owned : "+count}</span></div>:
                     <div className="row"><span className="badge not-owned">not owned</span></div>:""
                 }
-                <Link className="btn btn-warning btn-sm mb-3 mt-3" to={{ pathname:BASE_PATH+'/pokemon/list/detail/'+name, prop:data}}><FaSearchPlus/> Detail</Link>&nbsp;
+                <Link className="btn btn-warning btn-sm mb-3 mt-3" to={{ pathname:'/pokemon/list/detail/'+name, prop:data}}><FaSearchPlus/> Detail</Link>&nbsp;
                 {nickName?<button className="btn btn-danger btn-sm" onClick={()=>{release(data)}}><FaRegHandPaper/> Release</button>:""}
             </div>
         </div>
