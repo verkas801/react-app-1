@@ -43,7 +43,6 @@ function App() {
                 <Switch>
                   <Route 
                     exact path='/'
-                    // component ={withProps(Content,{carts:data.carts})}
                     component = {Home}
                   />
                   <Route 

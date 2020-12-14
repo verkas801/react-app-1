@@ -54,7 +54,7 @@ const PokemonProfile = (props) => {
             while(check);
             addContext({id,name,image,nickName},'mypokemons');
             alert("Your new "+name+" nickname is "+nickName);
-            window.location.href = '/mypokemon/list';   
+            history.push('/mypokemon/list');  
         }
     }
 
@@ -63,7 +63,7 @@ const PokemonProfile = (props) => {
         if(window.confirm("Are you sure want to release "+nickName+"?")){
             removeContext(nickName,'nickName','mypokemons');
             alert(nickName+" has been released");
-            window.location.href = '/mypokemon/list';
+            history.push('/mypokemon/list');
         }
     }
 
